@@ -1,3 +1,9 @@
+service:
+  type: ClusterIP
+  ports:
+    http: 80
+    ssh: 22
+
 ingress:
   enabled: true
   hosts:
