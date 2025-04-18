@@ -6,15 +6,12 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/serkan4545/bootstrap.git  # Dein Repo
-    path: apps
-    targetRevision: HEAD  # Immer die neueste Version des Repos verwenden
-    helm:
-      valueFiles:
-        - apps/gitea/chart/gitea/values.yaml  # Deine benutzerdefinierte Werte-Datei
+    repoURL: https://github.com/serkan4545/bootstrap.git
+    targetRevision: HEAD
+    path: applications
   destination:
-    server: https://kubernetes.default.svc  # Ziel Kubernetes-Cluster
-    namespace: argocd  # Namespace für die ArgoCD-Anwendung
+    server: https://kubernetes.default.svc
+    namespace: argocd
   syncPolicy:
     automated:
       prune: true

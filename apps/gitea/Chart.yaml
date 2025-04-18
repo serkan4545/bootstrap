@@ -1,0 +1,10 @@
+apiVersion: v2
+name: gitea-umbrella
+description: Umbrella chart to deploy Gitea with custom values
+type: application
+version: 0.1.0
+
+dependencies:
+  - name: gitea
+    version: 10.1.3
+    repository: https://dl.gitea.io/charts/
