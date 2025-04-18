@@ -7,7 +7,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/serkan4545/bootstrap.git  # Dein Repo
-    path: apps # Hier wird auf die Gitea-Anwendung verwiesen
+    path: apps/gitea/chart/gitea # Hier wird auf die Gitea-Anwendung verwiesen
     targetRevision: HEAD  # Immer die neueste Version des Repos verwenden
     helm:
       valueFiles:
