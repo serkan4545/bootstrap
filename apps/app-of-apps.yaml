@@ -11,7 +11,7 @@ spec:
     targetRevision: HEAD  # Immer die neueste Version des Repos verwenden
     helm:
       valueFiles:
-        - values.yaml  # Deine benutzerdefinierte Werte-Datei
+        - apps/gitea/chart/gitea/values.yaml  # Deine benutzerdefinierte Werte-Datei
   destination:
     server: https://kubernetes.default.svc  # Ziel Kubernetes-Cluster
     namespace: argocd  # Namespace für die ArgoCD-Anwendung
