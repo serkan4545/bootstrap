@@ -1,11 +1,7 @@
 service:
   http:
     type: NodePort
-    nodePort: 30080
     port: 3000
-  ssh:
-    type: NodePort
-    nodePort: 30022
 
 ingress:
   enabled: false
