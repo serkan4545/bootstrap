@@ -1,0 +1,23 @@
+service:
+  http:
+    type: NodePort
+    nodePort: 30080
+  ssh:
+    type: NodePort
+    nodePort: 30022
+
+ingress:
+  enabled: false
+
+persistence:
+  enabled: true
+  size: 10Gi
+  storageClass: standard
+
+postgresql:
+  enabled: true
+  auth:
+    postgresPassword: gitea
+    username: gitea
+    password: gitea
+    database: gitea

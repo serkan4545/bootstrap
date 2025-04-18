@@ -10,17 +10,9 @@ spec:
     chart: gitea
     targetRevision: 10.1.3
     helm:
-      releaseName: gitea
-      values: |
-        service:
-          http:
-            type: NodePort
-            nodePort: 30080
-          ssh:
-            type: NodePort
-            nodePort: 30022
-        persistence:
-          enabled: false
+      valueFiles:
+        - values.yaml
+    path: ""
   destination:
     server: https://kubernetes.default.svc
     namespace: gitea
