@@ -1,19 +1,21 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: root-app
+  name: app-of-apps
   namespace: argocd
 spec:
   project: default
   source:
-    repoURL: https://github.com/serkan4545/bootstrap.git
-    targetRevision: HEAD
-    path: apps/gitea
+    repoURL: https://github.com/serkan4545/bootstrap.git  # Dein Repo
+    path: apps # Hier wird auf die Gitea-Anwendung verwiesen
+    targetRevision: HEAD  # Immer die neueste Version des Repos verwenden
+    helm:
+      valueFiles:
+        - values.yaml  # Deine benutzerdefinierte Werte-Datei
   destination:
-    server: https://kubernetes.default.svc
-    namespace: argocd
+    server: https://kubernetes.default.svc  # Ziel Kubernetes-Cluster
+    namespace: argocd  # Namespace für die ArgoCD-Anwendung
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
-
