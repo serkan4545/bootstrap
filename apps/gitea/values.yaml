@@ -21,8 +21,3 @@ postgresql:
     username: gitea
     password: gitea
     database: gitea
-
-gitea:
-  config:
-    server:
-      ROOT_URL: "http://192.168.49.2:30080/"
